@@ -16,6 +16,8 @@ React.renderComponent(
 
 ![Screenshot](http://s3.postimg.org/5j5bvp8cj/Screen_Shot_2015_06_23_at_22_15_42.png)
 
+You can see a live demo [here](http://jsfiddle.net/FrancescoCioria/0ycfru3n/3/)
+
 ###Install
 ```
 npm install --save react-input-link
