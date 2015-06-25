@@ -32,7 +32,12 @@ const InputLink = React.createClass({
   },
 
   getInputStyle() {
-    return assign(this.props.style, {paddingRight: this.state.width});
+    const neededStyle = {
+      paddingRight: this.state.width,
+      width: '100%',
+      boxSizing: 'border-box'
+    };
+    return assign(this.props.style, neededStyle);
   },
 
   getChildStyle() {
