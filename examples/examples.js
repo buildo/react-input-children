@@ -7,12 +7,19 @@ const Example = React.createClass({
 
   getInitialState() {
     return {
-      showPassword: false
+      showPassword: false,
+      firstLinkText: 'short'
     };
   },
 
+  componentDidMount() {},
+
   togglePasswordVisibility() {
     this.setState({showPassword: !this.state.showPassword});
+  },
+
+  toggleLength() {
+    this.setState({firstLinkText: this.state.firstLinkText === 'short' ? 'much longer' : 'short'});
   },
 
   render() {
@@ -50,9 +57,8 @@ const Example = React.createClass({
 
         <h2>Plain text</h2>
         <InputLink style={inputStyle} placeholder='right padding is computed'>
-          <a style={linkStyle}>I'm a link!</a>
+          <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
         </InputLink>
-
         <h2>Password</h2>
         <InputLink type={passwordType} style={inputStyle} placeholder='Try writing something!' defaultValue='hide me!'>
           <a style={linkStyle} onClick={this.togglePasswordVisibility}>{passwordMessage}</a>

@@ -24,6 +24,10 @@ const InputLink = React.createClass({
   },
 
   componentDidMount() {
+    this.computeChildSize();
+  },
+
+  computeChildSize() {
     const childWrapper = this.refs.childWrapper.getDOMNode();
     this.setState({
       height: childWrapper.clientHeight,
@@ -58,6 +62,10 @@ const InputLink = React.createClass({
         </div>
       </div>
     );
+  },
+
+  componentWillReceiveProps() {
+    setTimeout(this.computeChildSize);
   }
 
 });
