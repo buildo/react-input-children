@@ -28,11 +28,13 @@ const InputLink = React.createClass({
   },
 
   computeChildSize() {
-    const childWrapper = this.refs.childWrapper.getDOMNode();
-    this.setState({
-      height: childWrapper.clientHeight,
-      width: childWrapper.clientWidth
-    });
+    const { clientWidth, clientHeight } = this.refs.childWrapper.getDOMNode();
+    if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
+      this.setState({
+        height: clientHeight,
+        width: clientWidth
+      });
+    }
   },
 
   getInputStyle() {
