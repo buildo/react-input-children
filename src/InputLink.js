@@ -1,5 +1,6 @@
 import React from 'react';
-import {omit, assign} from 'lodash/object';
+import omit from 'lodash/object/omit';
+import assign from 'lodash/object/assign';
 
 const InputLink = React.createClass({
 
@@ -24,15 +25,17 @@ const InputLink = React.createClass({
   },
 
   componentDidMount() {
-    this.computeChildSize();
+    this.computeChildrenSize();
   },
 
-  computeChildSize() {
-    const childWrapper = this.refs.childWrapper.getDOMNode();
-    this.setState({
-      height: childWrapper.clientHeight,
-      width: childWrapper.clientWidth
-    });
+  computeChildrenSize() {
+    const { clientWidth, clientHeight } = this.refs.childrenWrapper.getDOMNode();
+    if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
+      this.setState({
+        height: clientHeight,
+        width: clientWidth
+      });
+    }
   },
 
   getInputStyle() {
@@ -41,10 +44,10 @@ const InputLink = React.createClass({
       width: '100%',
       boxSizing: 'border-box'
     };
-    return assign(this.props.style, neededStyle);
+    return assign({}, this.props.style, neededStyle);
   },
 
-  getChildStyle() {
+  getChildrenStyle() {
     return {
       position: 'absolute',
       top: '50%',
@@ -57,15 +60,15 @@ const InputLink = React.createClass({
     return (
       <div style={{position: 'relative'}}>
         <input {...omit(this.props, 'children')} style={this.getInputStyle()}/>
-        <div ref='childWrapper' style={this.getChildStyle()}>
+        <div ref='childrenWrapper' style={this.getChildrenStyle()}>
           {this.props.children}
         </div>
       </div>
     );
   },
 
-  componentWillReceiveProps() {
-    setTimeout(this.computeChildSize);
+  componentDidUpdate() {
+    this.computeChildrenSize();
   }
 
 });
