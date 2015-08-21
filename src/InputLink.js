@@ -64,8 +64,8 @@ const InputLink = React.createClass({
     );
   },
 
-  componentWillReceiveProps() {
-    setTimeout(this.computeChildSize);
+  componentDidUpdate() {
+    this.computeChildSize();
   }
 
 });
