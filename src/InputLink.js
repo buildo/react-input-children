@@ -68,7 +68,7 @@ const InputLink = React.createClass({
     return (
       <div {...wrapperProps}>
         <input {...omit(this.props, ['children', 'wrapperStyle', 'wrapperClassName'])} style={this.getInputStyle()}/>
-        <div ref='childWrapper' style={this.getChildStyle()}>
+        <div ref='childrenWrapper' style={this.getChildrenStyle()}>
           {this.props.children}
         </div>
       </div>
