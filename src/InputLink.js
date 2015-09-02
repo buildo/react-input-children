@@ -8,12 +8,16 @@ const InputLink = React.createClass({
     children: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.element
-    ]).isRequired
+    ]).isRequired,
+    wrapperClassName: React.PropTypes.string,
+    wrapperStyle: React.PropTypes.object
   },
 
   getDefaultProps() {
     return {
-      style: {}
+      style: {},
+      wrapperClassName: '',
+      wrapperStyle: {}
     };
   },
 
@@ -57,10 +61,14 @@ const InputLink = React.createClass({
   },
 
   render() {
+    const wrapperProps = {
+      className: this.props.wrapperClassName,
+      style: assign(this.props.wrapperStyle, {position: 'relative'})
+    };
     return (
-      <div style={{position: 'relative'}}>
-        <input {...omit(this.props, 'children')} style={this.getInputStyle()}/>
-        <div ref='childrenWrapper' style={this.getChildrenStyle()}>
+      <div {...wrapperProps}>
+        <input {...omit(this.props, ['children', 'wrapperStyle', 'wrapperClassName'])} style={this.getInputStyle()}/>
+        <div ref='childWrapper' style={this.getChildStyle()}>
           {this.props.children}
         </div>
       </div>
