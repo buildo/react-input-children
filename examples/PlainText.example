@@ -1,0 +1,38 @@
+class Example extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      firstLinkText: 'short'
+    };
+  }
+
+  toggleLength = () => {
+    this.setState({firstLinkText: this.state.firstLinkText === 'short' ? 'much longer' : 'short'});
+  }
+
+  render() {
+    const inputStyle = {
+      height: 40,
+      border: '1px solid lightgrey',
+      borderRadius: 4,
+      padding: 5,
+      fontSize: 16
+    };
+
+    const linkStyle= {
+      color: 'green',
+      cursor: 'pointer',
+      padding: 10
+    };
+
+    return (
+      <div style={{ width: 350 }}>
+        <h2>Plain text</h2>
+        <InputLink style={inputStyle} placeholder='right padding is computed'>
+          <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
+        </InputLink>
+      </div>
+    );
+  }
+}

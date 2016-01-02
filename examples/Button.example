@@ -1,0 +1,26 @@
+class Example extends React.Component {
+
+  render() {
+    const inputStyle = {
+      height: 40,
+      border: '1px solid lightgrey',
+      borderRadius: 4,
+      padding: 5,
+      fontSize: 16
+    };
+
+    const buttonStyle = {
+      margin: 10,
+      cursor: 'pointer'
+    };
+
+    return (
+      <div style={{ width: 350 }}>
+        <h2>Button</h2>
+        <InputLink style={inputStyle}>
+          <button style={buttonStyle}>I'm a button!</button>
+        </InputLink>
+      </div>
+    );
+  }
+}
