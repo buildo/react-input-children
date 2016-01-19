@@ -32,9 +32,6 @@
     "url": "https://github.com/buildo/react-input-link/issues"
   },
   "homepage": "https://github.com/buildo/react-input-link",
-  "dependencies": {
-    "lodash": "^3.9.3"
-  },
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.11",
