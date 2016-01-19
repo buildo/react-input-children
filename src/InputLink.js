@@ -7,7 +7,9 @@ const InputLink = React.createClass({
       React.PropTypes.node,
       React.PropTypes.element
     ]).isRequired,
-    wrapper: React.PropTypes.object
+    wrapper: React.PropTypes.object,
+    wrapperClassName: React.PropTypes.string,
+    wrapperStyle: React.PropTypes.string
   },
 
   getInitialState() {
@@ -50,14 +52,21 @@ const InputLink = React.createClass({
   },
 
   render() {
-    const { children, wrapper = {}, ...inputProps } = this.props;
+    const {
+      children,
+      wrapper = {}, wrapperClassName, wrapperStyle,
+      ...inputProps
+    } = this.props;
+
     const wrapperProps = {
       ...wrapper,
+      className: wrapper.className || wrapperClassName,
       style: {
-        ...wrapper.style,
+        ...(wrapper.style || wrapperStyle),
         position: 'relative'
       }
     };
+
     return (
       <div {...wrapperProps}>
         <input {...inputProps} style={this.getInputStyle()} />
