@@ -1,6 +1,4 @@
 import React from 'react';
-import omit from 'lodash/object/omit';
-import assign from 'lodash/object/assign';
 
 const InputLink = React.createClass({
 
@@ -9,16 +7,9 @@ const InputLink = React.createClass({
       React.PropTypes.node,
       React.PropTypes.element
     ]).isRequired,
+    wrapper: React.PropTypes.object,
     wrapperClassName: React.PropTypes.string,
-    wrapperStyle: React.PropTypes.object
-  },
-
-  getDefaultProps() {
-    return {
-      style: {},
-      wrapperClassName: '',
-      wrapperStyle: {}
-    };
+    wrapperStyle: React.PropTypes.string
   },
 
   getInitialState() {
@@ -43,12 +34,12 @@ const InputLink = React.createClass({
   },
 
   getInputStyle() {
-    const neededStyle = {
+    return {
+      ...this.props.style,
       paddingRight: this.state.width,
       width: '100%',
       boxSizing: 'border-box'
     };
-    return assign({}, this.props.style, neededStyle);
   },
 
   getChildrenStyle() {
@@ -61,13 +52,24 @@ const InputLink = React.createClass({
   },
 
   render() {
+    const {
+      children,
+      wrapper = {}, wrapperClassName, wrapperStyle,
+      ...inputProps
+    } = this.props;
+
     const wrapperProps = {
-      className: this.props.wrapperClassName,
-      style: assign(this.props.wrapperStyle, {position: 'relative'})
+      ...wrapper,
+      className: wrapper.className || wrapperClassName,
+      style: {
+        ...(wrapper.style || wrapperStyle),
+        position: 'relative'
+      }
     };
+
     return (
       <div {...wrapperProps}>
-        <input {...omit(this.props, ['children', 'wrapperStyle', 'wrapperClassName'])} style={this.getInputStyle()}/>
+        <input {...inputProps} style={this.getInputStyle()} />
         <div ref='childrenWrapper' style={this.getChildrenStyle()}>
           {this.props.children}
         </div>
