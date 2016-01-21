@@ -1,6 +1,6 @@
 {
-  "name": "react-input-link",
-  "version": "0.0.5",
+  "name": "react-input-children",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:buildo/react-input-link"
+    "url": "git@github.com:buildo/react-input-children"
   },
   "keywords": [
     "react",
     "react-component",
     "input",
-    "link",
+    "children",
+    "form",
     "label",
     "action",
     "button"
@@ -29,9 +30,9 @@
   "author": "Francesco Cioria <francesco@buildo.io>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/buildo/react-input-link/issues"
+    "url": "https://github.com/buildo/react-input-children/issues"
   },
-  "homepage": "https://github.com/buildo/react-input-link",
+  "homepage": "https://github.com/buildo/react-input-children",
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.11",
