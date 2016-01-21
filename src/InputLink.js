@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InputLink = React.createClass({
+export default class InputLink extends React.Component {
 
-  propTypes: {
+  static propTypes = {
     children: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.element
@@ -10,46 +10,47 @@ const InputLink = React.createClass({
     wrapper: React.PropTypes.object,
     wrapperClassName: React.PropTypes.string,
     wrapperStyle: React.PropTypes.string
-  },
+  }
 
-  getInitialState() {
-    return {
-      width: 1,
-      height: 1
-    };
-  },
+  constructor(props) {
+    super(props);
+    this.state = { width: 1, height: 1 };
+  }
 
   componentDidMount() {
     this.computeChildrenSize();
-  },
+  }
 
-  computeChildrenSize() {
-    const { clientWidth, clientHeight } = this.refs.childrenWrapper.getDOMNode();
+  computeChildrenSize = () => {
+    const childrenWrapper = this.refs.childrenWrapper.nodeType === 1 ?
+      this.refs.childrenWrapper :
+      this.refs.childrenWrapper.getDOMNode();
+    const { clientWidth, clientHeight } = childrenWrapper;
     if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
       this.setState({
         height: clientHeight,
         width: clientWidth
       });
     }
-  },
+  }
 
-  getInputStyle() {
+  getInputStyle = () => {
     return {
       ...this.props.style,
       paddingRight: this.state.width,
       width: '100%',
       boxSizing: 'border-box'
     };
-  },
+  }
 
-  getChildrenStyle() {
+  getChildrenStyle = () => {
     return {
       position: 'absolute',
       top: '50%',
       right: 0,
       marginTop: -1 * (this.state.height / 2)
     };
-  },
+  }
 
   render() {
     const {
@@ -75,12 +76,10 @@ const InputLink = React.createClass({
         </div>
       </div>
     );
-  },
+  }
 
   componentDidUpdate() {
     this.computeChildrenSize();
   }
 
-});
-
-export default InputLink;
+}
