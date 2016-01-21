@@ -1,2 +1,2 @@
-import InputLink from './InputLink.js';
-export default InputLink;
+import InputChildren from './InputChildren.js';
+export default InputChildren;
