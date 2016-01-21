@@ -6,7 +6,7 @@ const InputLink = React.createClass({
     children: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.element
-    ]).isRequired,
+    ]),
     wrapper: React.PropTypes.object,
     wrapperClassName: React.PropTypes.string,
     wrapperStyle: React.PropTypes.string
@@ -71,7 +71,7 @@ const InputLink = React.createClass({
       <div {...wrapperProps}>
         <input {...inputProps} style={this.getInputStyle()} />
         <div ref='childrenWrapper' style={this.getChildrenStyle()}>
-          {this.props.children}
+          {children}
         </div>
       </div>
     );
