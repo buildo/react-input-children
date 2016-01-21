@@ -7,9 +7,11 @@ export default class InputLink extends React.Component {
       React.PropTypes.node,
       React.PropTypes.element
     ]),
-    wrapper: React.PropTypes.object,
-    wrapperClassName: React.PropTypes.string,
-    wrapperStyle: React.PropTypes.string
+    wrapper: React.PropTypes.object
+  }
+
+  static defaultProps = {
+    wrapper: {}
   }
 
   constructor(props) {
@@ -55,15 +57,14 @@ export default class InputLink extends React.Component {
   render() {
     const {
       children,
-      wrapper = {}, wrapperClassName, wrapperStyle,
+      wrapper,
       ...inputProps
     } = this.props;
 
     const wrapperProps = {
       ...wrapper,
-      className: wrapper.className || wrapperClassName,
       style: {
-        ...(wrapper.style || wrapperStyle),
+        ...wrapper.style,
         position: 'relative'
       }
     };
