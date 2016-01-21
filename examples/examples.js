@@ -1,5 +1,5 @@
 import React from 'react';
-import InputLink from '../src/InputLink';
+import InputChildren from '../src/InputChildren';
 
 const Example = React.createClass({
 
@@ -56,24 +56,24 @@ const Example = React.createClass({
       <div style={{width: 350, margin: 20}}>
 
         <h2>Plain text</h2>
-        <InputLink style={inputStyle} placeholder='right padding is computed'>
+        <InputChildren style={inputStyle} placeholder='right padding is computed'>
           <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
-        </InputLink>
+        </InputChildren>
         <h2>Password</h2>
-        <InputLink type={passwordType} style={inputStyle} placeholder='Try writing something!' defaultValue='hide me!'>
+        <InputChildren type={passwordType} style={inputStyle} placeholder='Try writing something!' defaultValue='hide me!'>
           <a style={linkStyle} onClick={this.togglePasswordVisibility}>{passwordMessage}</a>
-        </InputLink>
+        </InputChildren>
 
         <h2>Button</h2>
-        <InputLink style={inputStyle}>
+        <InputChildren style={inputStyle}>
           <button style={{margin: 10, cursor: 'pointer'}}>I'm a button!</button>
-        </InputLink>
+        </InputChildren>
 
         <h2>Anything you want</h2>
-        <InputLink style={inputStyle}>
+        <InputChildren style={inputStyle}>
           <img src='http://api.adorable.io/avatars/285/franc' style={{float: 'left', width: 30, height: 30, margin: '5px 5px 0 10px'}}/>
           <div style={labelStyle}>Yay!</div>
-        </InputLink>
+        </InputChildren>
       </div>
     );
   }

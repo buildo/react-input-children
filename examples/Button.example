@@ -17,9 +17,9 @@ class Example extends React.Component {
     return (
       <div style={{ width: 350 }}>
         <h2>Button</h2>
-        <InputLink style={inputStyle}>
+        <InputChildren style={inputStyle}>
           <button style={buttonStyle}>I'm a button!</button>
-        </InputLink>
+        </InputChildren>
       </div>
     );
   }

@@ -32,10 +32,10 @@ class Example extends React.Component {
     return (
       <div style={{ width: 350 }}>
         <h2>Anything you want</h2>
-        <InputLink style={inputStyle}>
+        <InputChildren style={inputStyle}>
           <img src='http://api.adorable.io/avatars/285/franc' style={imgStyle}/>
           <div style={labelStyle}>Yay!</div>
-        </InputLink>
+        </InputChildren>
       </div>
     );
   }
