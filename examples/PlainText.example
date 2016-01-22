@@ -29,9 +29,9 @@ class Example extends React.Component {
     return (
       <div style={{ width: 350 }}>
         <h2>Plain text</h2>
-        <InputLink style={inputStyle} placeholder='right padding is computed'>
+        <InputChildren style={inputStyle} placeholder='right padding is computed'>
           <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
-        </InputLink>
+        </InputChildren>
       </div>
     );
   }

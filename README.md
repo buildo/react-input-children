@@ -1,28 +1,28 @@
-# React Input Link
+# React Input Children
 
-ReactInputLink is a replacement for the base input react component capable of rendering a child (link, button...) inside the input itself. It supports the same props of react input.
+`InputChildren` is a replacement for the base input react component capable of rendering a child (link, button...) inside the input itself. It supports the same props of react input.
 
 ```jsx
-var InputLink = require('react-input-link');
+var InputChildren = require('react-input-children');
 
 React.renderComponent(
   <div>
-    <InputLink {...inputProps}>
+    <InputChildren {...inputProps}>
       <a href="/forgot-password">Forgot?</a>
-    </InputLink>
+    </InputChildren>
   </div>,
   document.body);
 ```
 
 ![Screenshot](http://s3.postimg.org/5j5bvp8cj/Screen_Shot_2015_06_23_at_22_15_42.png)
 
-[Live Demo](https://rawgit.com/buildo/react-input-link/master/examples/index.html)
+[Live Demo](https://rawgit.com/buildo/react-input-children/master/examples/index.html)
 
-more examples [here](https://github.com/buildo/react-input-link/tree/master/examples)
+more examples [here](https://github.com/buildo/react-input-children/tree/master/examples)
 
 ###Install
 ```
-npm install --save react-input-link
+npm install --save react-input-children
 ```
 
 ###Under the hood
@@ -31,9 +31,9 @@ The JSX is structured as follows:
 <div>
   <input/>
   <div>
-    {this.props.children}
+    {children}
   </div>
 </div>
 ```
 
-Inside *componentDidMount* ReactInputLink gets height and width of the child div wrapper and uses them to position it correctly inside the input and to give the correct right padding to the input itself.
+Inside *componentDidMount* `InputChildren` gets height and width of the child div wrapper and uses them to position it correctly inside the input and to give the correct right padding to the input itself.

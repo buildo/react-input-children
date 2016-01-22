@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class InputLink extends React.Component {
+export default class InputChildren extends React.Component {
 
   static propTypes = {
     children: React.PropTypes.oneOfType([
