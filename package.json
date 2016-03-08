@@ -56,5 +56,8 @@
   },
   "peerDependencies": {
     "react": ">= 0.12.x"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1"
   }
 }
