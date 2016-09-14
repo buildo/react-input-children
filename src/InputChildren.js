@@ -1,5 +1,18 @@
 import React from 'react';
+import { t, props } from 'tcomb-react';
 
+export const Props = {
+  children: t.maybe(t.ReactChildren),
+  wrapper: t.maybe(t.Object)
+};
+
+
+/** `InputChildren` is a replacement for the base input react component capable of rendering
+ * a child (link, button...) inside the input itself. It supports the same props of react input.
+ * @param children - react children rendered inside the input
+ * @param wrapper - props passed to wrapper 'div'
+ */
+@props(Props, { strict: false })
 export default class InputChildren extends React.Component {
 
   static propTypes = {

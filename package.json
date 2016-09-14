@@ -60,6 +60,7 @@
     "react": ">= 0.12.x"
   },
   "dependencies": {
-    "lodash": "^4.6.1"
+    "lodash": "^4.6.1",
+    "tcomb-react": "^0.9.3"
   }
 }
