@@ -28,6 +28,7 @@ notify:
     repositories:
       - buildo/react-components
     token: $$NOTIFY_BRC_TOKEN
+    fork: true
     when:
       branch: master
 
