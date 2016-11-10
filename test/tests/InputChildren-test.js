@@ -1,19 +1,17 @@
-import React from 'react/addons'
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
-import InputChildren from '../../src/InputChildren';
-
-const TestUtils = React.addons.TestUtils;
+import InputChildren from '../../src';
 
 
-describe('InputChildren', function() {
+describe('InputChildren', () => {
 
-  it('should be displaying input and child', function() {
-    const component =
-      <div>
-        <InputChildren className='input'>
-          <a className='link'>Link</a>
-        </InputChildren>
-      </div>;
+  it('should be displaying input and child', () => {
+    const component = (
+      <InputChildren className='input'>
+        <a className='link'>Link</a>
+      </InputChildren>
+    );
     const InputChildrenWrapper = TestUtils.renderIntoDocument(component);
 
     const input = TestUtils.scryRenderedDOMComponentsWithClass(InputChildrenWrapper, 'input');
@@ -31,8 +29,11 @@ describe('InputChildren', function() {
   //       </InputChildren>
   //     </div>;
   //   const InputChildrenWrapper = TestUtils.renderIntoDocument(component);
-
-  //   const input = TestUtils.findRenderedDOMComponentWithClass(InputChildrenWrapper, 'input').getDOMNode();
+  //
+  //   const input = TestUtils.findRenderedDOMComponentWithClass(
+  //     InputChildrenWrapper,
+  //     'input'
+  //   ).getDOMNode();
   //   console.log(InputChildrenWrapper.getDOMNode().style.width);
   // });
 
