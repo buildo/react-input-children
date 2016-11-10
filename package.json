@@ -52,6 +52,7 @@
     "karma-webpack": "^1.5.1",
     "mocha": "^2.2.5",
     "react": "^0.14",
+    "react-dom": "^0.14",
     "react-readme-generator": "0.0.1",
     "require-dir": "^0.3.0",
     "webpack": "^1.9.10",

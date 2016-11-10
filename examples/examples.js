@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import InputChildren from '../src/InputChildren';
 
 class Example extends React.Component {
@@ -90,4 +91,4 @@ class Example extends React.Component {
 
 }
 
-React.render(<Example />, document.getElementById('container'));
+ReactDOM.render(<Example />, document.getElementById('container'));
