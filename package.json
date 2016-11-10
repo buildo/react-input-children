@@ -9,8 +9,8 @@
     "lint": "eslint src examples",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
-    "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
-    "start": "webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
+    "build-examples": "npm run clean && webpack --config examples/webpack.config.build.babel.js --progress",
+    "start": "webpack-dev-server --config examples/webpack.config.babel.js --progress --hot --inline",
     "clean": "rm -f examples/bundle.js examples/bundle.js.map",
     "generate-readme": "node ./generateReadme.js"
   },
@@ -42,6 +42,7 @@
     "eslint-config-buildo": "buildo/eslint-config",
     "eslint-loader": "^1.1.1",
     "expect": "^1.6.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "isparta-loader": "^0.2.0",
     "karma": "^1.3.0",
     "karma-bamboo-reporter": "^0.1.0",
