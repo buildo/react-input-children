@@ -1,2 +1,1 @@
-import InputChildren from './InputChildren.js';
-export default InputChildren;
+export default from './InputChildren.js';
