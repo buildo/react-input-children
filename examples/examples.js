@@ -1,26 +1,24 @@
 import React from 'react';
 import InputChildren from '../src/InputChildren';
 
-const Example = React.createClass({
+class Example extends React.Component {
 
-  propTypes: {},
+  state = {
+    showPassword: false,
+    firstLinkText: 'short'
+  }
 
-  getInitialState() {
-    return {
-      showPassword: false,
-      firstLinkText: 'short'
-    };
-  },
+  togglePasswordVisibility = () => {
+    this.setState({
+      showPassword: !this.state.showPassword
+    });
+  }
 
-  componentDidMount() {},
-
-  togglePasswordVisibility() {
-    this.setState({showPassword: !this.state.showPassword});
-  },
-
-  toggleLength() {
-    this.setState({firstLinkText: this.state.firstLinkText === 'short' ? 'much longer' : 'short'});
-  },
+  toggleLength = () => {
+    this.setState({
+      firstLinkText: this.state.firstLinkText === 'short' ? 'much longer' : 'short'
+    });
+  }
 
   render() {
     const inputStyle = {
@@ -31,7 +29,7 @@ const Example = React.createClass({
       fontSize: 16
     };
 
-    const linkStyle= {
+    const linkStyle = {
       color: 'green',
       cursor: 'pointer',
       padding: 10
@@ -53,31 +51,43 @@ const Example = React.createClass({
     const passwordMessage = this.state.showPassword ? 'hide' : 'show';
     const passwordType = this.state.showPassword ? '' : 'password';
     return (
-      <div style={{width: 350, margin: 20}}>
+      <div style={{ width: 350, margin: 20 }}>
 
         <h2>Plain text</h2>
         <InputChildren style={inputStyle} placeholder='right padding is computed'>
           <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
         </InputChildren>
+
         <h2>Password</h2>
-        <InputChildren type={passwordType} style={inputStyle} placeholder='Try writing something!' defaultValue='hide me!'>
+        <InputChildren
+          type={passwordType}
+          style={inputStyle}
+          placeholder='Try writing something!'
+          defaultValue='hide me!'
+        >
           <a style={linkStyle} onClick={this.togglePasswordVisibility}>{passwordMessage}</a>
         </InputChildren>
 
         <h2>Button</h2>
         <InputChildren style={inputStyle}>
-          <button style={{margin: 10, cursor: 'pointer'}}>I'm a button!</button>
+          <button style={{ margin: 10, cursor: 'pointer' }}>
+            I'm a button!
+          </button>
         </InputChildren>
 
         <h2>Anything you want</h2>
         <InputChildren style={inputStyle}>
-          <img src='http://api.adorable.io/avatars/285/franc' style={{float: 'left', width: 30, height: 30, margin: '5px 5px 0 10px'}}/>
+          <img
+            src='http://api.adorable.io/avatars/285/franc'
+            style={{ float: 'left', width: 30, height: 30, margin: '5px 5px 0 10px' }}
+          />
           <div style={labelStyle}>Yay!</div>
         </InputChildren>
+
       </div>
     );
   }
 
-});
+}
 
 React.render(<Example />, document.getElementById('container'));
