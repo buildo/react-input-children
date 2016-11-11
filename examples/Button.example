@@ -1,24 +1,22 @@
 class Example extends React.Component {
 
+  onButtonClick = () => {
+    alert('clicked!');
+  }
+  
   render() {
-    const inputStyle = {
-      height: 40,
-      border: '1px solid lightgrey',
-      borderRadius: 4,
-      padding: 5,
-      fontSize: 16
-    };
 
-    const buttonStyle = {
-      margin: 10,
-      cursor: 'pointer'
+    const buttonStyle = { height: 32,
+      borderWidth: '0 0 0 1px',
+      borderRadius: '0px 4px 4px 0px',
+      marginRight: 1,
+      fontSize: '14px'
     };
 
     return (
       <div style={{ width: 350 }}>
-        <h2>Button</h2>
-        <InputChildren style={inputStyle}>
-          <button style={buttonStyle}>I'm a button!</button>
+        <InputChildren wrapper={{ className: 'input-children', style: { overflow: 'hidden' } }}>
+          <Button style={buttonStyle} onClick={this.onButtonClick}>Button label</Button>
         </InputChildren>
       </div>
     );

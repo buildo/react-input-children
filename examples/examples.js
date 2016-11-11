@@ -49,6 +49,16 @@ class Example extends React.Component {
       margin: '1px 1px 1px 5px'
     };
 
+    const buttonStyle = {
+      height: 38,
+      border: 0,
+      borderLeft: '1px solid lightgrey',
+      borderRadius: '0 4px 4px 0',
+      cursor: 'pointer',
+      background: 'linear-gradient(to top, #f2f4f7, #ffffff)',
+      marginRight: 1
+    };
+
     const passwordMessage = this.state.showPassword ? 'hide' : 'show';
     const passwordType = this.state.showPassword ? '' : 'password';
     return (
@@ -71,9 +81,7 @@ class Example extends React.Component {
 
         <h2>Button</h2>
         <InputChildren style={inputStyle}>
-          <button style={{ margin: 10, cursor: 'pointer' }}>
-            I'm a button!
-          </button>
+          <button style={buttonStyle}>I'm a button!</button>
         </InputChildren>
 
         <h2>Anything you want</h2>
