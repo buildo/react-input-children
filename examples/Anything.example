@@ -10,14 +10,14 @@ class Example extends React.Component {
       padding: '0 10px',
       backgroundColor: '#F0F0F0',
       boxSizing: 'border-box',
-      margin: '0 0 0 5px'
+      marginRight: 1
     };
 
     const imgStyle = {
       float: 'left',
-      width: 30,
-      height: 30,
-      margin: '5px 5px 0 10px'
+      width: 24,
+      height: 24,
+      margin: '4px 8px'
     };
 
     return (
