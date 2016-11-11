@@ -1,25 +1,16 @@
 class Example extends React.Component {
 
   render() {
-    const inputStyle = {
-      height: 40,
-      border: '1px solid lightgrey',
-      borderRadius: 4,
-      padding: 5,
-      fontSize: 16
-    };
-
     const labelStyle = {
-      height: 38,
+      height: 32,
       width: 90,
       borderRadius: '0px 4px 4px 0px',
-      lineHeight: '40px',
+      lineHeight: '32px',
       textAlign: 'center',
-      paddingLeft: 10,
-      paddingRight: 10,
+      padding: '0 10px',
       backgroundColor: '#F0F0F0',
       boxSizing: 'border-box',
-      margin: '1px 1px 1px 5px'
+      margin: '0 0 0 5px'
     };
 
     const imgStyle = {
@@ -31,8 +22,7 @@ class Example extends React.Component {
 
     return (
       <div style={{ width: 350 }}>
-        <h2>Anything you want</h2>
-        <InputChildren style={inputStyle}>
+        <InputChildren wrapper={{ className: 'input-children' }}>
           <img src='http://api.adorable.io/avatars/285/franc' style={imgStyle}/>
           <div style={labelStyle}>Yay!</div>
         </InputChildren>
