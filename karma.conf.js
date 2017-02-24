@@ -46,7 +46,7 @@ module.exports = function (config) {
         loaders: [
           {
             test: /\.jsx?$/,
-            loader: 'babel?stage=0&loose',
+            loader: 'babel',
             include: [paths.SRC, paths.TEST],
             exclude: /node_modules/
           }
@@ -54,7 +54,7 @@ module.exports = function (config) {
         preLoaders: [
           {
             test: /\.jsx?$/,
-            loader: 'isparta?{babel: {stage: 0, loose: true}}',
+            loader: 'isparta',
             include: paths.SRC,
             exclude: /node_modules/
           }, {
