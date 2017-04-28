@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/karma/bin/karma start",
     "build": "rm -rf lib && mkdir lib && babel src -d lib",
-    "lint": "eslint src examples test",
+    "lint": "scriptoni lint src examples test",
+    "lint-fix": "scriptoni lint src examples test --fix",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config examples/webpack.config.build.babel.js --progress",
@@ -37,11 +38,8 @@
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
     "babel-preset-buildo": "^0.1.1",
-    "eslint": "^3.7.1",
-    "eslint-config-buildo": "buildo/eslint-config",
     "eslint-loader": "^1.1.1",
     "expect": "^1.6.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -58,6 +56,7 @@
     "react-dom": "^0.14",
     "react-readme-generator": "0.0.1",
     "require-dir": "^0.3.0",
+    "scriptoni": "^0.4.3",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
