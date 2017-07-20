@@ -8,3 +8,4 @@ a child (link, button...) inside the input itself. It supports the same props of
 |----|----|-------|-----------|
 | **children** | <code>ReactChildren</code> |  | *optional*. React children rendered inside the input |
 | **wrapper** | <code>Object</code> | <code>{}</code> | *optional*. Props passed to wrapper 'div' |
+| **innerRef** | <code>Function</code> |  | *optional*. Ref function for internal input reference <br /><code>(ref) => { this.input = ref; }</code> |

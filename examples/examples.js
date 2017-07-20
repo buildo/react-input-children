@@ -65,7 +65,7 @@ class Example extends React.Component {
       <div style={{ width: 350, margin: 20 }}>
 
         <h2>Plain text</h2>
-        <InputChildren style={inputStyle} placeholder='right padding is computed'>
+        <InputChildren style={inputStyle} placeholder='right padding is computed' innerRef={(ref) => { this.firstInput = ref; }} >
           <a style={linkStyle} onClick={this.toggleLength}>{this.state.firstLinkText}</a>
         </InputChildren>
 
