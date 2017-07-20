@@ -2,19 +2,28 @@
 
 
 
+## [v1.0.2](https://github.com/buildo/react-input-children/tree/v1.0.2) (2017-07-20)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v1.0.1...v1.0.2)
+
+#### New features:
+
+- Add support for input DOM inner reference [#31](https://github.com/buildo/react-input-children/issues/31)
+- lodash should not be a dependency [#22](https://github.com/buildo/react-input-children/issues/22)
+- Better style for examples [#21](https://github.com/buildo/react-input-children/issues/21)
+
 ## [v1.0.1](https://github.com/buildo/react-input-children/tree/v1.0.1) (2016-09-14)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v1.0.0...v1.0.1)
 
 #### New features:
 
-- [Dependencies] Update lodash to v4.6.1 [#19](https://github.com/buildo/react-input-children/issues/19)
+- Update lodash to v4.6.1 [#19](https://github.com/buildo/react-input-children/issues/19)
+- rename to `react-input-children` [#17](https://github.com/buildo/react-input-children/issues/17)
 
 ## [v1.0.0](https://github.com/buildo/react-input-children/tree/v1.0.0) (2016-01-21)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v0.0.5...v1.0.0)
 
 #### New features:
 
-- rename to `react-input-children` [#17](https://github.com/buildo/react-input-children/issues/17)
 - remove deprecated wrapperClassName and wrapperStyle [#15](https://github.com/buildo/react-input-children/issues/15)
 - use ES6 classes [#13](https://github.com/buildo/react-input-children/issues/13)
 - use buildo/eslint-config [#11](https://github.com/buildo/react-input-children/issues/11)
@@ -34,13 +43,10 @@
 
 - should compute size after every change only if component still mounted [#4](https://github.com/buildo/react-input-children/issues/4)
 - can't pass className and style to main <div> wrapper [#3](https://github.com/buildo/react-input-children/issues/3)
+- should recompute child size if new props [#2](https://github.com/buildo/react-input-children/issues/2)
 
 ## [v0.0.3](https://github.com/buildo/react-input-children/tree/v0.0.3) (2015-06-30)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v0.0.2...v0.0.3)
-
-#### New features:
-
-- should recompute child size if new props [#2](https://github.com/buildo/react-input-children/issues/2)
 
 ## [v0.0.2](https://github.com/buildo/react-input-children/tree/v0.0.2) (2015-06-25)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v0.0.1...v0.0.2)
