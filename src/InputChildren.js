@@ -20,7 +20,8 @@ export default class InputChildren extends React.Component {
       React.PropTypes.node,
       React.PropTypes.element
     ]),
-    wrapper: React.PropTypes.object
+    wrapper: React.PropTypes.object,
+    innerRef: React.PropTypes.func
   }
 
   static defaultProps = {
@@ -71,6 +72,7 @@ export default class InputChildren extends React.Component {
     const {
       children,
       wrapper,
+      innerRef,
       ...inputProps
     } = this.props;
 
@@ -84,7 +86,7 @@ export default class InputChildren extends React.Component {
 
     return (
       <div {...wrapperProps}>
-        <input {...inputProps} style={this.getInputStyle()} />
+        <input {...inputProps} style={this.getInputStyle()} ref={innerRef} />
         <div ref='childrenWrapper' style={this.getChildrenStyle()}>
           {children}
         </div>
