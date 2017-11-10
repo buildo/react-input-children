@@ -2,6 +2,13 @@
 
 
 
+## [v2.0.0](https://github.com/buildo/react-input-children/tree/v2.0.0) (2017-11-10)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v1.0.2...v2.0.0)
+
+#### Breaking:
+
+- drop support for older react version (<0.14.9), support react 16 [#34](https://github.com/buildo/react-input-children/issues/34)
+
 ## [v1.0.2](https://github.com/buildo/react-input-children/tree/v1.0.2) (2017-07-20)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v1.0.1...v1.0.2)
 
