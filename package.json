@@ -69,9 +69,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "react": ">= 0.12.x"
+    "react": ">=0.14.9 <15 || >=15.3.x"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "tcomb-react": "^0.9.3"
   }
 }

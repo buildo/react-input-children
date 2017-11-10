@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { t, props } from 'tcomb-react';
 
 export const Props = {
@@ -16,12 +17,12 @@ export const Props = {
 export default class InputChildren extends React.Component {
 
   static propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.element
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.element
     ]),
-    wrapper: React.PropTypes.object,
-    innerRef: React.PropTypes.func
+    wrapper: PropTypes.object,
+    innerRef: PropTypes.func
   }
 
   static defaultProps = {
