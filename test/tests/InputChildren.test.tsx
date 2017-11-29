@@ -1,24 +1,17 @@
-import React from 'react';
-import TestUtils from 'react-addons-test-utils';
-import expect from 'expect';
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 import InputChildren from '../../src';
 
 
 describe('InputChildren', () => {
 
-  it('should be displaying input and child', () => {
-    const component = (
+  it('should render correctly', () => {
+    const component = renderer.create(
       <InputChildren className='input'>
         <a className='link'>Link</a>
       </InputChildren>
     );
-    const InputChildrenWrapper = TestUtils.renderIntoDocument(component);
-
-    const input = TestUtils.scryRenderedDOMComponentsWithClass(InputChildrenWrapper, 'input');
-    expect(input.length).toBe(1, 'input is not displayed');
-
-    const link = TestUtils.scryRenderedDOMComponentsWithClass(InputChildrenWrapper, 'link');
-    expect(link.length).toBe(1, 'child link is not displayed');
+    expect(component).toMatchSnapshot();
   });
 
   // it('input should have correct right padding', function() {
