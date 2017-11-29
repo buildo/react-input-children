@@ -1,0 +1,32 @@
+.input-children {
+  font-family: sans-serif;
+
+  input {
+    padding: 8px 10px;
+    border: 1px solid #ced0da;
+    border-radius: 4px;
+    padding-left: 12px;
+    color: #354052;
+    font-weight: 600;
+    font-size: 14px;
+
+    /* placeholder */
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder {
+      color: #9098a7;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .6;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid #1a91eb !important;
+      box-shadow: 0;
+    }
+  }
+}
