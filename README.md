@@ -3,7 +3,7 @@
 `InputChildren` is a replacement for the base input react component capable of rendering a child (link, button...) inside the input itself. It supports the same props of react input.
 
 ```jsx
-var InputChildren = require('react-input-children');
+import InputChildren from 'react-input-children';
 
 React.renderComponent(
   <div>
@@ -20,12 +20,12 @@ React.renderComponent(
 
 more examples [here](https://github.com/buildo/react-input-children/tree/master/examples)
 
-###Install
+### Install
 ```
 npm install --save react-input-children
 ```
 
-###Under the hood
+### Under the hood
 The JSX is structured as follows:
 ```html
 <div>
