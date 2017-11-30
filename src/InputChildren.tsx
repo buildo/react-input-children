@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 
 export namespace InputChildren {
   export type Props = React.InputHTMLAttributes<HTMLInputElement> & {
-    children?: any,
+    children?: React.ReactNode,
     wrapper?:  React.HTMLProps<HTMLDivElement>
     innerRef?: (textarea: HTMLInputElement) => void
   }
