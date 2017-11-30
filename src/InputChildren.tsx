@@ -1,20 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { t, props } from 'tcomb-react';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
-export const Props = {
-  children: t.maybe(t.ReactChildren),
-  wrapper: t.maybe(t.Object)
-};
+export namespace InputChildren {
+  export type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+    children?: React.ReactNode,
+    wrapper?:  React.HTMLProps<HTMLDivElement>
+    innerRef?: (textarea: HTMLInputElement) => void
+  }
+}
 
+export type State = {
+  width: number,
+  height: number
+}
 
-/** `InputChildren` is a replacement for the base input react component capable of rendering
+/**
+ * `InputChildren` is a replacement for the base input react component capable of rendering
  * a child (link, button...) inside the input itself. It supports the same props of react input.
- * @param children - react children rendered inside the input
- * @param wrapper - props passed to wrapper 'div'
  */
-@props(Props, { strict: false })
-export default class InputChildren extends React.Component {
+export default class InputChildren extends React.Component<InputChildren.Props, State> {
 
   static propTypes = {
     children: PropTypes.oneOfType([
@@ -25,24 +29,16 @@ export default class InputChildren extends React.Component {
     innerRef: PropTypes.func
   }
 
-  static defaultProps = {
-    wrapper: {}
-  }
+  state = { width: 1, height: 1 }
 
-  constructor(props) {
-    super(props);
-    this.state = { width: 1, height: 1 };
-  }
+  childrenWrapper: HTMLDivElement
 
   componentDidMount() {
     this.computeChildrenSize();
   }
 
-  computeChildrenSize = () => {
-    const childrenWrapper = this.refs.childrenWrapper.nodeType === 1 ?
-      this.refs.childrenWrapper :
-      this.refs.childrenWrapper.getDOMNode();
-    const { clientWidth, clientHeight } = childrenWrapper;
+  computeChildrenSize(): void {
+    const { clientWidth, clientHeight } = this.childrenWrapper;
     if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
       this.setState({
         height: clientHeight,
@@ -51,7 +47,7 @@ export default class InputChildren extends React.Component {
     }
   }
 
-  getInputStyle = () => {
+  getInputStyle(): React.CSSProperties {
     return {
       ...this.props.style,
       paddingRight: this.state.width,
@@ -60,7 +56,7 @@ export default class InputChildren extends React.Component {
     };
   }
 
-  getChildrenStyle = () => {
+  getChildrenStyle(): React.CSSProperties {
     return {
       position: 'absolute',
       top: '50%',
@@ -72,12 +68,12 @@ export default class InputChildren extends React.Component {
   render() {
     const {
       children,
-      wrapper,
+      wrapper = {},
       innerRef,
       ...inputProps
     } = this.props;
 
-    const wrapperProps = {
+    const wrapperProps: React.HTMLProps<HTMLDivElement> = {
       ...wrapper,
       style: {
         ...wrapper.style,
@@ -88,7 +84,7 @@ export default class InputChildren extends React.Component {
     return (
       <div {...wrapperProps}>
         <input {...inputProps} style={this.getInputStyle()} ref={innerRef} />
-        <div ref='childrenWrapper' style={this.getChildrenStyle()}>
+        <div ref={(ref: HTMLDivElement) => this.childrenWrapper = ref} style={this.getChildrenStyle()}>
           {children}
         </div>
       </div>
