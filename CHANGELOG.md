@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.0](https://github.com/buildo/react-input-children/tree/v3.0.0) (2017-12-03)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v2.0.0...v3.0.0)
+
+#### Breaking:
+
+- Refactor in TypeScript! [#35](https://github.com/buildo/react-input-children/issues/35)
+
 ## [v2.0.0](https://github.com/buildo/react-input-children/tree/v2.0.0) (2017-11-10)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v1.0.2...v2.0.0)
 

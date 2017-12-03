@@ -1,6 +1,6 @@
 {
   "name": "react-input-children",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A replacement for the base <input> component capable of rendering a child (link, button...) inside the input itself",
   "main": "lib",
   "files": [
@@ -72,7 +72,9 @@
     "prop-types": "^15.6.0"
   },
   "jest": {
-    "setupFiles": ["<rootDir>/test/setup.js"],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
