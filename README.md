@@ -16,9 +16,7 @@ React.renderComponent(
 
 ![Screenshot](http://s3.postimg.org/5j5bvp8cj/Screen_Shot_2015_06_23_at_22_15_42.png)
 
-[Live Demo](https://rawgit.com/buildo/react-input-children/master/examples/index.html)
-
-more examples [here](https://github.com/buildo/react-input-children/tree/master/examples)
+[Live Examples](http://react-components.buildo.io/#inputchildren)
 
 ### Install
 ```
