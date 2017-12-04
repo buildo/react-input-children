@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.1](https://github.com/buildo/react-input-children/tree/v3.0.1) (2017-12-04)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v3.0.0...v3.0.1)
+
+#### Fixes (bugs & defects):
+
+- import in v3.0.0 is broken [#37](https://github.com/buildo/react-input-children/issues/37)
+
 ## [v3.0.0](https://github.com/buildo/react-input-children/tree/v3.0.0) (2017-12-03)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v2.0.0...v3.0.0)
 
