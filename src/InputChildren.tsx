@@ -2,10 +2,13 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 export namespace InputChildren {
-  export type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+  export type Props = React.HTMLProps<HTMLInputElement> & {
+    /** React children rendered inside the input */
     children?: React.ReactNode,
+    /** Props passed to wrapper 'div' */
     wrapper?:  React.HTMLProps<HTMLDivElement>
-    innerRef?: (textarea: HTMLInputElement) => void
+    /** Ref function for internal input reference */
+    innerRef?: (input: HTMLInputElement) => void
   }
 }
 
