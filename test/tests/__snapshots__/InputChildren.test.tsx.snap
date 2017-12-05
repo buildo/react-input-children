@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputChildren should render correctly 1`] = `"<div id=\\"input-children\\" style=\\"position:relative\\"><input class=\\"input\\" style=\\"padding-right:1px;width:100%;box-sizing:border-box\\"><div style=\\"position:absolute;top:50%;right:0;margin-top:-0.5px\\">&gt;<a class=\\"link\\">Link</a></div></div>"`;
+
+exports[`build build script generates every needed file 1`] = `
+Array [
+  "InputChildren.d.ts",
+  "InputChildren.js",
+  "index.d.ts",
+  "index.js",
+]
+`;
