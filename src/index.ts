@@ -1,2 +1,2 @@
-import InputChildren from './InputChildren';
+import { InputChildren } from './InputChildren';
 export default InputChildren;
