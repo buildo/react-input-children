@@ -21,7 +21,7 @@ export type State = {
  * `InputChildren` is a replacement for the base input react component capable of rendering
  * a child (link, button...) inside the input itself. It supports the same props of react input.
  */
-export default class InputChildren extends React.Component<InputChildren.Props, State> {
+export class InputChildren extends React.Component<InputChildren.Props, State> {
 
   static propTypes = {
     children: PropTypes.oneOfType([
