@@ -2,6 +2,17 @@
 
 
 
+## [v4.0.0](https://github.com/buildo/react-input-children/tree/v4.0.0) (2018-01-18)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v3.0.1...v4.0.0)
+
+#### Breaking:
+
+- move @types deps to dev deps [#41](https://github.com/buildo/react-input-children/issues/41)
+
+#### Fixes (bugs & defects):
+
+- InputChildren.Props type annotations are not working in VSCode [#39](https://github.com/buildo/react-input-children/issues/39)
+
 ## [v3.0.1](https://github.com/buildo/react-input-children/tree/v3.0.1) (2017-12-04)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v3.0.0...v3.0.1)
 

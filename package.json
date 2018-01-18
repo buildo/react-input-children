@@ -1,6 +1,6 @@
 {
   "name": "react-input-children",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "A replacement for the base <input> component capable of rendering a child (link, button...) inside the input itself",
   "main": "lib",
   "typings": "lib",
