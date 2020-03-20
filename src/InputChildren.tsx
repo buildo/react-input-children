@@ -24,6 +24,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
   state = { width: 1, height: 1 }
 
   childrenWrapper: HTMLDivElement | null = null;
+  computeTimeout: number | null = null
 
   componentDidMount() {
     this.computeChildrenSize();
@@ -86,7 +87,12 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
   }
 
   componentDidUpdate() {
-    setTimeout(this.computeChildrenSize);
+    this.computeTimeout = setTimeout(this.computeChildrenSize);
   }
 
+  componentWillUnmount() {
+    if (this.computeTimeout !== null) {
+      clearTimeout(this.computeTimeout)
+    }
+  }
 }
