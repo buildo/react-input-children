@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 
 export namespace InputChildren {
   export type Props = React.HTMLProps<HTMLInputElement> & {
@@ -22,35 +21,28 @@ export type State = {
  * a child (link, button...) inside the input itself. It supports the same props of react input.
  */
 export class InputChildren extends React.Component<InputChildren.Props, State> {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
-    ]),
-    wrapper: PropTypes.object,
-    innerRef: PropTypes.func
-  }
-
   state = { width: 1, height: 1 }
 
-  childrenWrapper: HTMLDivElement
+  childrenWrapper: HTMLDivElement | null = null;
+  computeTimeout: number | null = null
 
   componentDidMount() {
     this.computeChildrenSize();
   }
 
-  computeChildrenSize(): void {
-    const { clientWidth, clientHeight } = this.childrenWrapper;
-    if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
-      this.setState({
-        height: clientHeight,
-        width: clientWidth
-      });
+  computeChildrenSize = () : void => {
+    if (this.childrenWrapper) {
+      const { clientWidth, clientHeight } = this.childrenWrapper;
+      if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
+        this.setState({
+          height: clientHeight,
+          width: clientWidth
+        });
+      }
     }
   }
 
-  getInputStyle(): React.CSSProperties {
+  getInputStyle = (): React.CSSProperties => {
     return {
       ...this.props.style,
       paddingRight: this.state.width,
@@ -59,7 +51,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
     };
   }
 
-  getChildrenStyle(): React.CSSProperties {
+  getChildrenStyle = (): React.CSSProperties => {
     return {
       position: 'absolute',
       top: '50%',
@@ -95,7 +87,12 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
   }
 
   componentDidUpdate() {
-    this.computeChildrenSize();
+    this.computeTimeout = setTimeout(this.computeChildrenSize);
   }
 
+  componentWillUnmount() {
+    if (this.computeTimeout !== null) {
+      clearTimeout(this.computeTimeout)
+    }
+  }
 }
