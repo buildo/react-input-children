@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 
 export namespace InputChildren {
   export type Props = React.HTMLProps<HTMLInputElement> & {
@@ -22,16 +21,6 @@ export type State = {
  * a child (link, button...) inside the input itself. It supports the same props of react input.
  */
 export class InputChildren extends React.Component<InputChildren.Props, State> {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
-    ]),
-    wrapper: PropTypes.object,
-    innerRef: PropTypes.func
-  }
-
   state = { width: 1, height: 1 }
 
   childrenWrapper: HTMLDivElement
