@@ -2,6 +2,17 @@
 
 
 
+## [v4.0.2](https://github.com/buildo/react-input-children/tree/v4.0.2) (2020-03-20)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v4.0.1...v4.0.2)
+
+#### Fixes (bugs & defects):
+
+- computeChildrenSize in didMount/update can cause React stack overflows [#47](https://github.com/buildo/react-input-children/issues/47)
+
+#### New features:
+
+- Update npmjs live demo and examples URLs [#45](https://github.com/buildo/react-input-children/issues/45)
+
 ## [v4.0.1](https://github.com/buildo/react-input-children/tree/v4.0.1) (2018-01-18)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v4.0.0...v4.0.1)
 
