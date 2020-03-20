@@ -23,23 +23,25 @@ export type State = {
 export class InputChildren extends React.Component<InputChildren.Props, State> {
   state = { width: 1, height: 1 }
 
-  childrenWrapper: HTMLDivElement
+  childrenWrapper: HTMLDivElement | null = null;
 
   componentDidMount() {
     this.computeChildrenSize();
   }
 
-  computeChildrenSize(): void {
-    const { clientWidth, clientHeight } = this.childrenWrapper;
-    if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
-      this.setState({
-        height: clientHeight,
-        width: clientWidth
-      });
+  computeChildrenSize = () : void => {
+    if (this.childrenWrapper) {
+      const { clientWidth, clientHeight } = this.childrenWrapper;
+      if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
+        this.setState({
+          height: clientHeight,
+          width: clientWidth
+        });
+      }
     }
   }
 
-  getInputStyle(): React.CSSProperties {
+  getInputStyle = (): React.CSSProperties => {
     return {
       ...this.props.style,
       paddingRight: this.state.width,
@@ -48,7 +50,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
     };
   }
 
-  getChildrenStyle(): React.CSSProperties {
+  getChildrenStyle = (): React.CSSProperties => {
     return {
       position: 'absolute',
       top: '50%',
@@ -84,7 +86,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
   }
 
   componentDidUpdate() {
-    this.computeChildrenSize();
+    setTimeout(this.computeChildrenSize);
   }
 
 }
