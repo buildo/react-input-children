@@ -31,7 +31,14 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
 
   computeChildrenSize(): void {
     const { clientWidth, clientHeight } = this.childrenWrapper;
-    if (clientWidth !== this.state.width || clientHeight !== this.state.height) {
+    if (
+      // Instead of plain !== comparison, using a magic number
+      // to defend against possible rounding errors in
+      // `clientHeight`/`clientWidth`, and avoid causing re-render loops.
+      // See https://github.com/buildo/react-input-children/issues/47
+      Math.abs(clientWidth - this.state.width) > 1 ||
+      Math.abs(clientHeight - this.state.height) > 1
+    ) {
       this.setState({
         height: clientHeight,
         width: clientWidth
