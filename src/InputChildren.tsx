@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 export namespace InputChildren {
-  export type Props = React.HTMLProps<HTMLInputElement> & {
+  export type Props = Omit<React.HTMLProps<HTMLInputElement>, 'ref'> & {
     /** React children rendered inside the input */
     children?: React.ReactNode,
     /** Props passed to wrapper 'div' */
     wrapper?:  React.HTMLProps<HTMLDivElement>
     /** Ref function for internal input reference */
-    innerRef?: (input: HTMLInputElement) => void
+    inputRef?: React.Ref<HTMLInputElement>
   }
 }
 
@@ -16,11 +16,7 @@ export type State = {
   height: number
 }
 
-/**
- * `InputChildren` is a replacement for the base input react component capable of rendering
- * a child (link, button...) inside the input itself. It supports the same props of react input.
- */
-export class InputChildren extends React.Component<InputChildren.Props, State> {
+class InputChildrenInternal extends React.Component<InputChildren.Props, State> {
   state = { width: 1, height: 1 }
 
   childrenWrapper: HTMLDivElement
@@ -68,7 +64,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
     const {
       children,
       wrapper = {},
-      innerRef,
+      inputRef,
       ...inputProps
     } = this.props;
 
@@ -82,7 +78,7 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
 
     return (
       <div {...wrapperProps}>
-        <input {...inputProps} style={this.getInputStyle()} ref={innerRef} />
+        <input {...inputProps} style={this.getInputStyle()} ref={inputRef} />
         <div ref={(ref: HTMLDivElement) => this.childrenWrapper = ref} style={this.getChildrenStyle()}>
           {children}
         </div>
@@ -95,3 +91,11 @@ export class InputChildren extends React.Component<InputChildren.Props, State> {
   }
 
 }
+
+/**
+ * `InputChildren` is a replacement for the base input react component capable of rendering
+ * a child (link, button...) inside the input itself. It supports the same props of react input.
+ */
+export const InputChildren = React.forwardRef<HTMLInputElement, InputChildren.Props>(
+  (props, ref) => <InputChildrenInternal {...props} inputRef={ref} />
+)

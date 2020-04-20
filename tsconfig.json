@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES3",
+    "target": "ES5",
     "module": "commonjs",
     "declaration": true,
     "allowSyntheticDefaultImports": false,
@@ -16,9 +16,7 @@
     "sourceMap": false,
     "alwaysStrict": true,
     "jsx": "react",
-    "lib": [
-      "dom", "es6"
-    ]
+    "lib": ["dom", "esnext"]
   },
   "include": [
     "src/*",
