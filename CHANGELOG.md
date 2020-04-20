@@ -2,6 +2,13 @@
 
 
 
+## [v5.0.0](https://github.com/buildo/react-input-children/tree/v5.0.0) (2020-04-20)
+[Full Changelog](https://github.com/buildo/react-input-children/compare/v4.0.3...v5.0.0)
+
+#### Breaking:
+
+- forward React ref to the underlying input element [#51](https://github.com/buildo/react-input-children/issues/51)
+
 ## [v4.0.3](https://github.com/buildo/react-input-children/tree/v4.0.3) (2020-04-05)
 [Full Changelog](https://github.com/buildo/react-input-children/compare/v4.0.2...v4.0.3)
 
